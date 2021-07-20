@@ -1,0 +1,41 @@
+---
+title: "Healthcare Lab"
+author: "Elise Treit"
+date: "7/20/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Health Expenditures vs Coverage
+### Setting up the notebook
+Goals of this notebook are to understand how healthcare coverage and spending are related in the United States
+
+First: to set up the environment, we will be using the Here and Project Template packages
+
+```{r}
+#make sure necessary packages are installed
+install.packages("here")
+```
+```{r}
+library("here")
+
+```
+Reading the data in as data frames, first 2 lines were notes about the csv, needed to skip them
+```{r}
+coverage <- read.csv(file = here::here("healthcare-coverage.csv"), skip = 2, header = TRUE)
+spending <- read.csv(file = here::here("healthcare-spending.csv"), skip = 2, header = TRUE)
+```
+
+### Question 1: Is there a relationship between healthcare coverage and healthcare spending in the United States?
+Looking at the data using the head() function, it is clear that years covered in coverage (2013-2016) are quite different from spending (1991 - 2014).
+
+
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
